@@ -112,12 +112,14 @@ RCT_EXPORT_MODULE();
 
 - (NSString*) userAgent
 {
-#if TARGET_OS_TV
-    return @"not available";
-#else
-    UIWebView* webView = [[UIWebView alloc] initWithFrame:CGRectZero];
-    return [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-#endif
+	return @"not available";
+	
+//#if TARGET_OS_TV
+//    return @"not available";
+//#else
+//    UIWebView* webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+//    return [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+//#endif
 }
 
 - (NSString*) deviceLocale
